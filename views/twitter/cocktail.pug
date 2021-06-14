@@ -1,0 +1,27 @@
+doctype html
+html
+	head
+		title #{title}
+		meta(name="viewport" content="width=device-width, initial-scale=1.0")
+		meta(charset='utf-8')
+		meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+		meta(name='description' content='')
+
+		// Bootstrap core CSS
+		link(href='/twitter/style.css' rel='stylesheet')
+		link(href='/twitter/top-nav.css' rel='stylesheet')
+		link(href='/twitter/aggregate.css' rel='stylesheet')
+		script(src='/twitter/sidebar.js')
+
+	body
+		block content
+
+	footer 
+		script(src='https://momentjs.com/downloads/moment.min.js')
+		script(src='https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js')
+		script(src='/twitter/jquery.min.js')
+		script(src='/twitter/aggregateDisplay.js')
+		script(src='/twitter/displayInfo.js')
+		script(src='https://kit.fontawesome.com/a9b1673cea.js' crossorigin='anonymous')
+		block extra
+

@@ -1,0 +1,24 @@
+.emoji_key {
+	margin: 0;
+	text-align: left;
+	font-size: 30px;
+}
+
+.stat_box {
+	padding-left: 1px;
+	padding-right: 8px;
+	padding-top: 4px;
+	display: inline-block;
+}
+
+.stat_key {
+	margin: 0;
+	text-align: left;
+}
+
+.stat_value {
+	color: var(--farms-light) !important;
+	margin-top: -5px;
+	text-align: left;
+	font-size: 18px;
+}

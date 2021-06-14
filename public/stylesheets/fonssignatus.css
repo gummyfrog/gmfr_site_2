@@ -1,0 +1,283 @@
+body {
+	margin: 0;
+	background-color: #08080D;
+	color: #fff;
+	overflow-x: hidden;
+  	position: relative;
+  	width: 100%; height: 100%;
+	transition: 0.2s ease;
+}
+
+.break {
+	padding-bottom: 50px;
+}
+
+.back {
+	float: right;
+}
+
+.header {
+	padding-top: 30px;
+	width: 100%;
+	background-color: black;
+}
+
+.content {
+	padding-left: 40px;
+	padding-right: 40px;
+
+	max-width: 1440px;
+
+	margin: 0 auto;
+
+}
+
+.project {
+	padding-bottom: 10px;
+	padding-left: 35px;
+	transition: 1s ease;
+}
+
+
+.mwymi, .chess, .twitter, .other {
+	transition: 0.4s;
+}
+
+.mwymi:hover .projectsvg {
+	fill: url(#mwymi-gradient);
+}
+
+.mwymi:hover {
+	background: #080d17;
+	transform: scale(1.01);
+}
+
+
+.chess:hover .projectsvg {
+	fill: url(#chess-gradient);
+}
+.chess:hover {
+	background:  #22201C ;
+	transform: scale(1.01);
+}
+
+
+.twitter:hover .projectsvg {
+	fill: url(#twitter-gradient);
+}
+
+.twitter:hover {
+	background: #121212;
+	transform: scale(1.01);
+}
+
+/*
+		lineargradient#bg-gradient
+				stop(offset='0%' stop-color='#ED725A')
+				stop(offset='100%' stop-color='#EB6347')
+
+			lineargradient#mwymi-gradient
+				stop(offset='0%' stop-color='#53CCB0')
+				stop(offset='40%' stop-color='#62D0B6')
+				stop(offset='90%' stop-color='#34AD91')
+
+			lineargradient#chess-gradient
+				stop(offset='0%' stop-color='#E0A800')
+				stop(offset='40%' stop-color='#F5B800')
+				stop(offset='90%' stop-color='#E0A800')
+
+			lineargradient#twitter-gradient
+				stop(offset='0%' stop-color='#2B2565')
+				stop(offset='40%' stop-color='#5F369B')
+				*/
+.other {
+	background: linear-gradient(-10deg, #08080D, #221D23, #08080D, #08080D);
+    background-size: 400% 400%;
+    animation: set 1s forwards;
+}
+
+.other:hover {
+    animation: gradient 2s forwards;
+	transform: scale(1.01);
+}
+
+.other:hover .projectsvg {
+	fill: url(#other-gradient);
+}
+
+.logosvg, .projectsvg, .masksvg, .back {
+	fill: url(#bg-gradient);
+	height: 100px;
+	transition: fill 5s ease;
+}
+
+text {
+	font-family: 'Montserrat';
+	font-weight: 700;
+}
+
+text.subtitle {
+	font-weight: 400;
+}
+
+
+
+
+.smaller {
+	max-width: 568px;
+	transition: 0.3s ease;
+}
+
+.footer p {
+	line-height: 1.3em;
+}
+
+h1, h2, h3, h4, h5 {
+	margin: 0;
+/*	mix-blend-mode: screen;
+*/}
+
+p {
+/*	mix-blend-mode: difference;
+*/}
+
+a {
+	color: white;
+	font: 1em 'Montserrat', sans-serif;
+	font-weight: 600;
+}
+
+a:hover {
+	color: #EB6347;
+}
+
+h1 {
+	font: 1.2em 'Montserrat', sans-serif;
+	font-weight: 800;
+}
+
+h2 {
+	color: white;
+	font: 1em 'Montserrat', sans-serif;
+	font-weight: 600;
+	padding-top: 10px;
+}
+
+
+h3 {
+	font: 1.1em 'Montserrat', sans-serif;
+	font-weight: 600;
+}
+
+p, h4 {
+	font: 1em 'Open Sans', sans-serif;
+	font-weight: 500;
+	line-height: 1.4em;
+}
+
+
+/* 
+1em = 
+1.3em = 
+1.5em = 
+
+
+*/
+
+/*#bg {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  width: 100%;
+  height: 170vh;
+  position: absolute;
+  top: 1vh;
+  left: 0;
+  background-color: #3A333F;
+  overflow: hidden;
+}
+#bg #bg-lines {
+  width: 100%; height: 100%;
+  box-sizing: border-box;
+  position: absolute; bottom: 0; left: 0;
+}*/
+
+
+@media only screen and (max-width: 568px) {
+	.smaller {
+		width: 100%;
+	}
+
+	.project {
+		padding-left: 0px;
+	}
+}
+
+/*
+@media only screen and (max-width: 568px) {
+	.content {
+		width: 80%;
+		margin: auto;
+	}
+}
+
+*/
+
+
+
+
+.blink {
+	animation: 1s blink step-end infinite;
+	-webkit-animation: 1s blink step-end infinite;
+}
+
+
+
+
+@keyframes blink {
+	from, to {
+		color: transparent;
+	}
+	50% {
+		color: white;
+	}
+}
+
+@-webkit-keyframes blink {
+	from, to {
+		color: transparent;
+	}
+	50% {
+		color: white;
+	}
+}
+/*
+
+@media screen and (min-width: 320px) {
+  html {
+    font-size: calc(13px + 6 * ((100vw - 320px) / 680));
+  }
+}*/
+/*@media screen and (max-width: 800px) {
+  html {
+    font-size: 12px;
+  }
+}*/
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes set {
+    100% {
+        background-position: 0% 50%;
+    }
+    0% {
+        background-position: 100% 50%;
+    }
+}

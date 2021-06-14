@@ -1,0 +1,111 @@
+extends layout
+
+block content	
+	div.mwymi
+		div.content
+			div.project-head
+				svg.projectsvg(viewbox='0 0 100 50')
+					text()
+						tspan(x='0' y='26') •
+						tspan(x='0' y='40') MWYMI
+
+			div.project
+				h1 Money Where Your Mouth Is
+				a(href="/mwymi") ↳ / mwymi
+				br
+				a(href="https://github.com/gummyfrog") invite the bot
+				
+				div.smaller
+					p MWYMI is a dual-currency exchange tied to a Discord bot. One currency is used to buy time in voice chat (VC🜁), and the other to buy messages (MC🜸). You can only exchange between the two, but as supplies dwindle, the rates will change.
+
+					p You can also perform menial tasks to generate currency. Don't go broke, or else you can't speak! Talk isn't cheap anymore.
+
+	div.chess
+		div.content
+			div.project-head
+				svg.projectsvg(viewbox='0 0 140 50')
+					text()
+						tspan(x='0' y='26') ••
+						tspan(x='0' y='40') CHESS
+
+			div.project
+				h1 Armageddon Chess
+				a(href="https://github.com/gummyfrog") ↳ / playchess
+				br
+				a(href="/screenshots") screenshots
+
+				div.smaller
+					p Armageddon Chess is online, duel-style, battle-royale tele-chess!
+
+					p Like regular chess, except you decide which pieces you start with, and can use more powerful pieces the more games you win. If you lose three times, you're out!
+
+					p The goal was to let people who aren't that good at chess still have fun, and let you feel like you're snowballing if you're pretty good.
+
+	div.twitter
+		div.content
+			div.project-head
+				svg.projectsvg(viewbox='0 0 100 50')
+					text()
+						tspan(x='0' y='26') •••
+						tspan(x='0' y='40') TWITTER
+
+			div.project
+				h1 Deep Trend Analysis
+				a(href="/twitter") ↳ / twitter
+			
+				div.smaller
+					p This is a site that visualizes information about trends on Twitter. 
+
+					p You can request keywords to run analysis on, and get stuff back like word association, related words and hashtags, emoji usage, sentiment analysis (before Twitter implemented it in their API! I did it first!), stuff like that.
+
+	div.other
+		div.content
+			div.project-head
+				svg.projectsvg(viewbox='0 0 100 50')
+					text()
+						tspan(x='0' y='26') ••••
+						tspan(x='0' y='40') OTHER
+
+			div.project
+				h1 past/current work
+				a(href="https://github.com/gummyfrog") Apogeo Photos
+				br
+				a(href="https://twitter.com/gmyfrg") FJC Photography
+
+				br
+				br
+
+				h1 misc pages
+				a(href="/cw_faq_br") cw faq (br-pt)
+				br
+				br
+
+				h1 social links
+				a(href="https://github.com/gummyfrog") github
+				br
+				a(href="https://twitter.com/gmyfrg") twitter
+
+	svg
+		defs
+			lineargradient#bg-gradient
+				stop(offset='0%' stop-color='#ED725A')
+				stop(offset='100%' stop-color='#EB6347')
+
+			lineargradient#mwymi-gradient
+				stop(offset='0%' stop-color='#53CCB0')
+				stop(offset='40%' stop-color='#62D0B6')
+				stop(offset='90%' stop-color='#34AD91')
+
+			lineargradient#chess-gradient
+				stop(offset='0%' stop-color='#E0A800')
+				stop(offset='40%' stop-color='#F5B800')
+				stop(offset='90%' stop-color='#E0A800')
+
+			lineargradient#twitter-gradient
+				stop(offset='0%' stop-color='#2B2565')
+				stop(offset='40%' stop-color='#5F369B')
+
+
+			lineargradient#other-gradient
+				stop(offset='0%' stop-color='#E43F6F')
+				stop(offset='40%' stop-color='#BE3E82')

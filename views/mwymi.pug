@@ -1,0 +1,57 @@
+doctype html
+head
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title MWYMI Marketplace
+  link(rel='stylesheet' href='/mwymi/home.css')
+  script(src='https://cdn.jsdelivr.net/npm/chart.js@2.8.0')
+#messenger
+  bigtext  MWYMI
+  a#login(href='https://discord.com/api/oauth2/authorize?client_id=805208645980782603&redirect_uri=https%3A%2F%2Fwww.xn--hs4d.com%2F&response_type=token&scope=identify') Sign In With Discord
+  p  I'll be waiting! 
+  img(src='./soraka.png')
+.topbar
+  h1#info
+  h1#market  
+#terminal
+  form#exchangeform(onsubmit='return exchangeCoins()')
+    h1
+      | Exchange: 
+      input#exchange-amount(oninput="this.value = this.value.replace(/[^0-9.]/g, '');" maxlength='2' type='text' value='0' min='0' autocomplete='off' required='')
+      a#exchange(onclick='return changeExchange()')  🜸MC ⍄ 🜁VC 
+  #graphs
+    .graph
+      logo  🜸MC 1 ⇌ 🜁VC
+      canvas#MCCHART
+    .graph
+      logo  🜁VC 1 ⇌ 🜸MC
+      canvas#VCCHART
+  h1  Work for Coins 
+  a#reward(onclick='return changeReward()')  Reward: 🜸MC 
+  #work.work
+    #math.puzzle
+      #math-inside
+        h3  MATH 
+        h2#math-problem  6+2 
+        form(onsubmit='return submitMath()')
+          input#math-guess(type='text' autocomplete='off')
+        h3#math-value  1.0 
+    #anagram.puzzle
+      #anagram-inside
+        h3  ANAGRAM 
+        h2#scramble  lorbemgob 
+        form(onsubmit='return submitAnagram()')
+          input#anagram-guess(type='text' autocomplete='off')
+        h3#anagram-value  1.0 
+    #click.puzzle
+      #click-inside
+        h3(style='margin-bottom:15px')  CLICK 
+        button#ringButton(onclick='clickEvent()')
+          svg.clicker_ring(height='120' width='120')
+            circle.clicker_ring_circle(stroke-width='7' stroke='#53CCB0' fill='transparent' r='30' cx='62' cy='62')
+            circle.clicker_ring_circle(stroke-width='3' stroke='#53CCB0' fill='transparent' r='15' cx='62' cy='62')
+        h3#clicker-value  1.0 
+
+link(rel='stylesheet' href='snackbar.min.css')
+script(src='snackbar.min.js')
+script(src='/mwymi/original.js')
+script(src='https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js')

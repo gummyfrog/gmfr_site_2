@@ -1,0 +1,44 @@
+//- doctype html
+//- head
+//-   meta(charset='utf-8')
+//-   meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+//-   meta(name='description' content='')
+//-   title Weekly
+//-   // Bootstrap core CSS
+//-   link(href='/stylesheets/style.css' rel='stylesheet')
+//-   link(href='/stylesheets/top-nav.css' rel='stylesheet')
+//-   link(href='/stylesheets/aggregate.css' rel='stylesheet')
+//-   script(src='/javascripts/sidebar.js')
+
+extends cocktail
+
+block content
+
+  #wrapper.d-flex
+    // Page Content
+    #page-content-wrapper
+      .container-fluid
+        #header.header
+          .title_box
+            p#header-title.title  Loading... 
+        .button-container
+          button(onclick='chart.displayChart(chart.charts.hashtags)')
+            i.fas.fa-hashtag
+          button(onclick='chart.displayChart(chart.charts.words)')
+            i.fa.fa-comments
+          button(onclick='chart.displayChart(chart.charts.emojis)')
+            i.fa.fa-laugh
+          button(onclick='chart.displayChart(chart.charts.sentiment)')
+            i.fa.fa-heart
+        #padding(style='user-select: none')
+          canvas#timeline-graph(width='400' height='220')
+    // /#page-content-wrapper
+//- // /#wrapper
+
+
+//- script(src='https://momentjs.com/downloads/moment.min.js')
+//- script(src='https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js')
+//- script(src='/javascripts/jquery.min.js')
+//- script(src='/javascripts/aggregateDisplay.js')
+//- script(src='/javascripts/displayInfo.js')
+//- script(src='https://kit.fontawesome.com/a9b1673cea.js' crossorigin='anonymous')

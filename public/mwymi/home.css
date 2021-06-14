@@ -1,0 +1,361 @@
+body {
+	margin: 0;
+	background-color: #010204;
+	color: #fff;
+	overflow-x: hidden;
+  	position: relative;
+  	width: 100%; height: 100%;
+	transition: 0.2s ease;
+}
+
+a:visited {
+	color: #fff;
+}
+
+#messenger {
+	width: 300px;
+	height: 300px;
+	position: fixed;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+	border-radius: 20px;
+	z-index: 500;
+	text-align: center;
+	display: none;
+	background-color: #080d17;
+}
+
+bigtext {
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+	position: absolute;
+	font: 3.5em 'Montserrat', sans-serif;
+	font-weight: 600;
+	top: 10px;
+}
+
+#messenger a {
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+	top: 80px;
+}
+
+#messenger p {
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+	top: 220px;
+	font-style: italic;
+}
+
+#messenger img {
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+	top: 115px;
+
+	width: 100px;
+	height: 100px;
+}
+
+
+#reward, #exchange {
+	text-decoration: underline;
+}
+
+#reward:hover, #exchange:hover {
+	cursor: pointer;
+}
+
+
+#reward::-moz-selection, #exchange::-moz-selection {
+    background-color: transparent;
+    color: #fff;
+}
+
+#reward::selection, #exchange::selection{
+    background-color: transparent;
+    color: #fff;
+}
+
+
+.topbar {
+	top: 0px;
+	position: fixed;
+	display: block;
+	width: 100%;
+	background-color: #080d17;
+	z-index: 40;
+}
+
+#info {
+	display: inline-block;
+	position: relative;
+	float: left;
+	margin-left: 28px;
+}
+
+#market {
+	transition: 0.3s ease;
+	position: relative;
+	float: right;
+	margin-right: 28px;
+}
+
+#terminal {
+	transition: 0.4s ease;
+	display: block;
+	margin: auto;
+	width: 95%;
+	margin-top: 50px;
+}
+
+#anagram-inside, #math-inside, #click-inside {
+	position: absolute;
+	text-align: center;
+	width: 100%;
+	padding-top: 15px;
+}
+
+#ringButton {
+	background-color:transparent;
+	border:none;
+}
+
+input {
+	margin-top: 10px;
+	border: none;
+	padding: 0;
+	border-bottom: 2px solid #53CCB0;
+	text-align: center;
+	width: 50%;
+	font: 1.5em 'Montserrat', sans-serif;
+	background: transparent;
+	color: white;
+	font-weight: 600;
+}
+
+input:focus {
+    outline-width: 0;
+}
+
+#exchange-amount {
+	width: 110px;
+	text-align: right;
+}
+
+#submit {
+	width: 200px;
+}
+
+.graph {
+	position: relative;
+	width: 100%;
+	height: 120px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	background-color: #080d17;
+}
+
+.puzzle {
+	margin-top: 15px;
+	margin-bottom: 15px;
+	display: inline-block;
+	position: relative;
+	width: 33%;
+	height: 300px;
+	background-color: #080d17;
+}
+
+#reward {
+
+}
+
+.clicker_ring_circle {
+	display: block;
+	transition: stroke-dashoffset 0.15s;
+ }
+
+ button:active {
+	transition: 0.02s ease-in-out;
+	transform: translateY(2px);
+}
+
+
+
+
+
+
+.break {
+	padding-bottom: 50px;
+}
+
+.smallbreak {
+	padding-bottom: 0px;
+}
+
+.content {
+	padding: 40px;
+	max-width: 1440px;
+	margin: 0 auto;
+	position: relative;
+  	z-index: 6;
+  	margin-bottom: 50px;
+}
+
+.header, .project-head, .footer-head{
+	width: 100%;
+	height: 100px;
+}
+
+.project {
+	padding-bottom: 15px;
+	padding-left: 35px;
+}
+
+#TextLogo, #ProjectsLogo{
+	height: 100px;
+}
+
+#Logo {
+	position: absolute;
+	top: 70px;
+	height: 60px;
+	right: 40px;
+	opacity: 1
+	transition: 1s ease;
+}
+
+.center {
+	width: 100%;
+	margin: auto;
+}
+
+.smaller {
+	max-width: 568px;
+	transition: 0.3s ease;
+}
+
+.footer p {
+	line-height: 1.3em;
+}
+
+h1, h2, h3, h4, h5, a, logo {
+	line-height: 1.3em;
+	margin: 0
+}
+
+logo {
+	opacity: 0.2;
+	left: 40px;
+	position: absolute;
+	font: 3.8em 'Montserrat', sans-serif;
+	font-weight: 800;
+}
+
+h1, a {
+	font: 1.2em 'Montserrat', sans-serif;
+	font-weight: 800;
+}
+
+h2 {
+	color: white;
+	font: 1.5em 'Montserrat', sans-serif;
+	font-weight: 600;
+	padding-top: 10px;
+}
+
+h3 {
+	font: 1.8em 'Montserrat', sans-serif;
+	font-weight: 700;
+	margin-top: 20px;
+	margin-bottom: 40px;
+}
+
+p, h4 {
+	font: 1.3em 'Open Sans', sans-serif;
+	font-weight: 500;
+	line-height: 1.4em;
+}
+
+p { /* weird mobile number thing */
+	font: 1em 'Open Sans', sans-serif;
+	font-weight: 400;
+	line-height: 1.4em;
+}
+
+h4 {
+	font: 1em 'Montserrat', sans-serif;
+	font-weight: 600;
+	text-decoration: underline
+}
+
+
+/* 
+1em = 
+1.3em = 
+1.5em = 
+*/
+
+#bg {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  width: 100%;
+  height: 170vh;
+  position: absolute;
+  top: 1vh;
+  left: 0;
+  background-color: #3A333F;
+  overflow: hidden;
+}
+#bg #bg-lines {
+  width: 100%; height: 100%;
+  box-sizing: border-box;
+  position: absolute; bottom: 0; left: 0;
+}
+
+@media only screen and (max-width: 548px) {
+	logo {
+		transition: 0.3s ease;
+		font-size: 3.0em;
+	}
+	#market {
+		margin: 0;
+		width: 100%;
+		text-align: center;
+	}
+
+	#info {
+		margin: 0;
+		width: 100%;
+		text-align: center;
+	}
+}
+
+@media only screen and (max-width: 840px) {
+	.puzzle {
+		display: block !important;
+		width: 100%;
+		height: 300px;
+	}
+
+}
+
+@media only screen and (max-width: 620px) {
+	#terminal {
+		margin-top: 90px;
+	}
+
+}
