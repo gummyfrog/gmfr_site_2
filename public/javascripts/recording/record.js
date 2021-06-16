@@ -21,6 +21,9 @@ var microphone = document.getElementById("microphone");
 sendButton.addEventListener("click", sendRecording);
 microphone.addEventListener("click", startStopToggle);
 
+sendButton.addEventListener("touchstart", sendRecording);
+microphone.addEventListener('touchstart', startStopToggle, false);
+
 sendButton.disabled = true;
 
 var toggle = false;
