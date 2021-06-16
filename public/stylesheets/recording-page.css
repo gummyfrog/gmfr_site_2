@@ -1,20 +1,28 @@
-#microphone {
+#microphone svg {
   width: 300px;
-  margin: 0 auto;
-  margin-top: 40px;
   display: block;
   position: relative;
   fill: url(#bg-gradient);
   cursor: pointer;
   opacity: 0.7;
   animation: reset 0.3s ease forwards;
+
 }
 
-#microphone:hover {
+#microphone {
+	background: none;
+	border: none;
+	margin: 0 auto;
+  	margin-top: 40px;
+  	padding: 0;
+  	display: block;
+}
+
+#microphone:hover svg{
 	opacity: 0.9;
 }
 
-#microphone.live {
+#microphone.live svg {
 	fill: url(#live-gradient);
 	animation: bounce 1.5s ease infinite;
 	opacity: 1;
