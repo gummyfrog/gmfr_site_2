@@ -13,8 +13,11 @@
     "http-errors": "~1.6.3",
     "jsonfile": "^6.1.0",
     "morgan": "~1.9.1",
+    "multer": "^1.4.2",
     "node-snackbar": "^0.1.16",
+    "nodejs-audio-visualizer": "^1.1.1",
     "pug": "^3.0.2",
+    "request": "^2.88.2",
     "ws": "^7.4.6"
   }
 }

@@ -8,7 +8,6 @@ class timelineGraphHistory {
 			1: ["#c4b5da"],
 			2: ["#a791c8"],
 			3: ["#8a6cb6"],
-
 			4: ["#6d48a4"],
 			5: ["#57328d"],
 			6: ["#462871"],
@@ -23,6 +22,9 @@ class timelineGraphHistory {
 		}
 
 		this.ctx = document.getElementById('timeline-graph').getContext('2d');
+		this.description = document.getElementById('description');
+		this.buttons = document.getElementsByClassName('button-container');
+		this.buttons[0].classList.remove('hidden');
 		this.current_chart;
 
 		this.charts = this.makeCharts(data);
@@ -44,11 +46,13 @@ class timelineGraphHistory {
 		return ["hsl(",hue,",80%,50%)"].join("");
 	}
 
-	displayChart(data) {
+	displayChart(_description, data, thisButton) {
+		$(":button").removeClass("selected");
+		$("thisButton").addClass("selected");
 		if(this.current_chart != null) {
 			this.current_chart.destroy();
 		}
-
+		this.description.textContent = _description;
 		this.current_chart = new Chart(this.ctx, data);
 	}
 
@@ -65,7 +69,7 @@ class timelineGraphHistory {
 				`)
 		}
 
-		return ret.reverse().join("");
+		return ret.join("");
 	}
 
 
@@ -85,14 +89,18 @@ class timelineGraphHistory {
 			<p class="title"> ${title} </p>
 		</div>
 
+
+		<p class="stat_title">words</p>
 		<div class="stat_container">
 			${this.makeboxes(data.words, ["stat_box", "stat_key", "stat_value"], 3)}
 		</div>
 
+		<p class="stat_title">hashtags</p>
 		<div class="stat_container">
 			${this.makeboxes(data.hashtags, ["stat_box", "stat_box", "stat_value"], 3)}
 		</div>
 
+		<p class="stat_title">emojis</p>
 		<div class="stat_container">
 			${this.makeboxes(data.emojis, ["stat_box", "emoji_key", "stat_value"], 3)}
 		</div>
@@ -129,7 +137,6 @@ class timelineGraphHistory {
 
 	getHistory(timeline) {
 		var history = {};
-
 		for(var x=0;x<timeline.length;x++) {
 			var snap = timeline[x];
 
@@ -143,7 +150,7 @@ class timelineGraphHistory {
 						if(history[key] == undefined) {history[key]= {}}
 						if(history[key][point.key] == undefined) {history[key][point.key] = []}
 
-						history[key][point.key].push({t: moment.utc(snap.start_time), y: point.value});
+						history[key][point.key].push({info: {type: key, associated: snap.associated, percentRT: snap.percentRT}, t: moment.utc(snap.start_time), y: point.value});
 					}
 				}
 			}
@@ -178,28 +185,7 @@ class timelineGraphHistory {
 						label: function(tooltipItem, data) {
 							var label = (Math.round(tooltipItem.xLabel * 100) / 100);
 
-							var title = "";
-
-							switch(true) {
-								case label>0.8: 
-									title = "Very Positive."
-									break;
-								case label>0.5: 
-									title = "Mostly Positive."
-									break;
-								case label<0.3:
-									title = "Very Negative."
-									break;
-								case label<0.5:
-									title = "Mostly Negative."
-									break;
-								default: 
-									title = "No clue!"
-									break
-
-							}
-
-							return `${label} ${title}`;
+							return `${label} (Sentiment measured on a -1 to 2 scale.)`;
 						}
 					}
 				},
@@ -226,6 +212,17 @@ class timelineGraphHistory {
 
 		return(bar);
 
+	}
+
+
+	generateHistoryLabels(_history, _histKey) {
+		var labels = [];
+		var history = _history[_histKey]
+		for(var y=0;y<history.length;y++) {
+			var info = history[y].info
+			labels.push(`${_histKey} ${info.percentage}`)
+		}
+		return(labels);
 	}
 
 	makeCharts(data) {
@@ -256,6 +253,27 @@ class timelineGraphHistory {
 					tooltips: {
 						titleFontSize: 20,
 						bodyFontSize: 20,
+						callbacks: {
+							label: function(tooltipItem, data) {
+								var info = data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].info
+
+								var percentRT = (Math.round(info.percentRT * 100)/ 100);
+								var value = (Math.round(tooltipItem.yLabel * 100) / 100);
+								var label = data.datasets[tooltipItem.datasetIndex].label;
+
+								console.log(info.snap);
+								var associated = "";
+
+								if(info.type != "word") {
+									associated = info.associated.word;
+								} else if(type != "emoji") {
+									associated = info.associated.emoji;
+								}
+
+								return `${label}: ${value} (${percentRT*100}% Direct Retweets)`;
+
+							}
+						}
 					},
 					scales: {
 						xAxes: [{
@@ -277,7 +295,8 @@ class timelineGraphHistory {
 							boxWidth: 10,
 							usePointStyle: true,
 							padding: 10,
-							fontColor: "#5F369B"
+							fontColor: "#5F369B",
+							fontFamily: "Roboto Mono"
 						}
 					},
 				}
@@ -297,16 +316,17 @@ class timelineGraphHistory {
 
 				var total = history[key][histKey].reduce((acc, point) => acc + point.y, 0);
 
+				var graph_data = history[key][histKey]
+
 				var dataset = {
 					label: histKey,
-					data: history[key][histKey],
+					data: graph_data,
 					backgroundColor: color,
 					borderColor: color,
 					fill: false,
 					cubicInterpolationMode: "monotone",
 				}
 
-				obj.data.labels.push(moment.utc(history[key].start_time).toLocaleString())
 				dataset_sortable.push({raw: dataset, value: total});
 			}
 
@@ -314,9 +334,7 @@ class timelineGraphHistory {
 			.splice(0, spliceby);
 
 			for(var z=0;z<dataset_sortable.length;z++) {
-				console.log(z);
 				if(this.colors[z] != undefined) {
-					console.log(this.colors[z][0])
 					dataset_sortable[z].backgroundColor = this.colors[z][0];
 					dataset_sortable[z].borderColor = this.colors[z][0];
 				} else {
@@ -349,8 +367,9 @@ $.ajax({
   type: "GET",
 }).done((res) => {
 	chart = new timelineGraphHistory(res.data, title);
-	chart.displayChart(chart.charts.hashtags)
-
+	chart.displayChart("hashtags", chart.charts.hashtags)
 }).fail((err) => {
+	var header = document.getElementById("header-title")
+	header.textContent = `no data available at the moment!\ncode ${err.status}`
 	console.log(err);
 })

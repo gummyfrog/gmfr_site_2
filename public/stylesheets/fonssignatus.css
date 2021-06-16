@@ -25,7 +25,7 @@ body {
 .content {
 	padding-left: 40px;
 	padding-right: 40px;
-
+	
 	max-width: 1440px;
 
 	margin: 0 auto;
@@ -39,7 +39,7 @@ body {
 }
 
 
-.mwymi, .chess, .twitter, .other {
+.mwymi, .chess, .twitter, .voices, .other {
 	transition: 0.4s;
 }
 
@@ -67,6 +67,15 @@ body {
 }
 
 .twitter:hover {
+	background: #121212;
+	transform: scale(1.01);
+}
+
+
+.voices:hover .projectsvg {
+	fill: url(#mwymi-gradient);
+}
+.voices:hover {
 	background: #121212;
 	transform: scale(1.01);
 }

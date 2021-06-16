@@ -1,0 +1,68 @@
+extends layout
+
+block header_extra
+    svg.back(viewbox='0 0 80 48')
+        a(href="/")
+            text()
+                tspan(x='0' y='26') HOME ∆
+
+
+block head_extra
+    link(rel='stylesheet' href='stylesheets/recording-page.css')
+
+block content
+
+    div.content
+
+        svg#microphone(x='0px' y='0px' viewbox='0 0 460 460' style='enable-background:new 0 0 460 460;' xml:space='preserve')
+            g
+                path(d='M228.969,0c-55.741,0-103.53,34.693-122.912,83.62c-0.197,0.425-0.369,0.863-0.505,1.317\
+                c-5.629,14.667-8.723,30.579-8.723,47.203c0,72.862,59.277,132.139,132.14,132.139s132.14-59.277,132.14-132.139\
+                S301.831,0,228.969,0z M340.356,119.192c-0.181-0.01-0.36-0.027-0.543-0.027H117.584c0.852-7.358,2.417-14.5,4.628-21.357h213.514\
+                C337.939,104.673,339.505,111.824,340.356,119.192z M117.055,139.165h222.758c0.363,0,0.72-0.022,1.072-0.059\
+                c-0.453,7.351-1.612,14.513-3.42,21.417H120.471C118.669,153.637,117.511,146.495,117.055,139.165z M228.969,20\
+                c42.134,0,78.908,23.361,98.068,57.807H130.901C150.061,43.361,186.835,20,228.969,20z M228.969,244.279\
+                c-44.518,0-83.058-26.077-101.154-63.757h202.308C312.027,218.202,273.487,244.279,228.969,244.279z')
+                path(d='M292.481,263.657c-1.941,0.059-3.313,0.12-19.072,5.693c-0.235,0.083-23.797,8.33-44.44,8.33\
+                c-20.55,0-44.21-8.249-44.44-8.33c-15.759-5.573-16.11-5.507-18.05-5.573c-3.497-0.12-7.657,3.555-7.657,3.555\
+                c-3.349,3.961-2.952,7.068-0.279,22.9l24.413,144.58c2.19,12.967,14.207,23.125,27.357,23.125h37.313\
+                c13.15,0,25.167-10.158,27.357-23.126l24.413-144.58c2.673-15.832,3.069-18.938-0.279-22.9\
+                C299.116,267.332,296.148,263.546,292.481,263.657z M255.261,431.48c-0.561,3.319-4.271,6.457-7.637,6.457h-37.313\
+                c-3.365,0-7.076-3.138-7.637-6.456l-24.154-143.047c4.341,1.478,28.223,9.246,50.447,9.246s46.105-7.768,50.447-9.246\
+                L255.261,431.48z')
+                path(d='M204.314,331.502v31.915c0,10.201,8.299,18.5,18.5,18.5h12.309c10.201,0,18.5-8.299,18.5-18.5v-31.915\
+                c0-10.201-8.299-18.5-18.5-18.5h-12.309C212.613,313.002,204.314,321.301,204.314,331.502z M238.623,331.502v31.915\
+                c0,1.897-1.603,3.5-3.5,3.5h-12.309c-1.897,0-3.5-1.603-3.5-3.5v-31.915c0-1.897,1.603-3.5,3.5-3.5h12.309\
+                C237.02,328.002,238.623,329.605,238.623,331.502z')
+
+        button#sendButton(disabled='') Send!
+
+        div.text.smaller
+            p
+              | This demo uses 
+              a(href='https://github.com/mattdiamond/Recorderjs' target='_blank') Recorder.js
+              |  to record wav/PCM audio directly in the browser. Matt Diamond&lsquo;s 
+              a(target='_blank' href='https://github.com/mattdiamond/Recorderjs') Recorder.js
+              |  is a popular JavaScript library for recording audio in the browser as uncompressed pcm audio in .wav containers. Before it, the only way to record audio was to use Flash.
+            p
+              | Check out the 
+              a(href='https://github.com/addpipe/simple-recorderjs-demo' target='_blank') code on GitHub
+              |  and 
+              a(href='https://addpipe.com/blog/using-recorder-js-to-capture-wav-audio-in-your-html5-web-site/' target='_blank') the blog post on using Recorder.js to capture WAV audio
+              | .
+
+
+
+
+    svg
+        defs
+            lineargradient#bg-gradient
+                stop(offset='0%' stop-color='#ED725A')
+                stop(offset='100%' stop-color='#EB6347')
+            lineargradient#live-gradient
+                stop(offset='0%' stop-color='#53CCB0')
+                stop(offset='40%' stop-color='#62D0B6')
+                stop(offset='90%' stop-color='#34AD91')
+
+    script(src='javascripts/recording/recorder.js')
+    script(src='javascripts/recording/record.js')

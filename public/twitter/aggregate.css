@@ -1,7 +1,7 @@
 .emoji_key {
 	margin: 0;
 	text-align: left;
-	font-size: 30px;
+	font-size: 2.2rem;
 }
 
 .stat_box {
@@ -9,6 +9,7 @@
 	padding-right: 8px;
 	padding-top: 4px;
 	display: inline-block;
+	font-size: 1.2rem;
 }
 
 .stat_key {
@@ -18,7 +19,35 @@
 
 .stat_value {
 	color: var(--farms-light) !important;
-	margin-top: -5px;
+	margin-top: -1px;
 	text-align: left;
-	font-size: 18px;
+	font-size: 1.2rem;
+}
+
+.stat_title {
+	padding-left: 1px;
+	padding-top: 18px;
+	font-size: 1.2rem;
+	font-style: italic;
+}
+
+.description {
+	padding-left: 1px;
+	padding-right: 8px;
+	display: inline-block;
+	font-size: 1.5rem;
+	margin-top: 0;
+}
+
+
+button {
+	transition: 0.2s;
+}
+
+button:hover {
+	color: var(--farms-light);
+}
+
+.selected {
+	color: var(--farms-light);
 }

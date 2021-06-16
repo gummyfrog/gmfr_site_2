@@ -108,18 +108,17 @@ function initializeStock() {
 }
 
 function initializeGraph() {
-	graph = json.readFileSync("./wallet/graph.json");
+	graph = {mc:[], vc:[]};
 }
 
 function recordPrices() {
 	graph.mc.push({t: new Date(), y: bank.held.VC/bank.held.MC});
 	graph.vc.push({t: new Date(), y: bank.held.MC/bank.held.VC});
 
-	json.writeFile("./wallet/graph.json", graph, (err, res) => {
-		if(err) {
-			console.error();
-		}
-	});
+	if(graph.mc.length >= 20) {
+		graph.mc.shift();
+		graph.vc.shift();
+	}
 }
 
 equalizeMarket();

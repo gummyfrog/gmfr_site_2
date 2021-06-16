@@ -1,0 +1,75 @@
+#microphone {
+  width: 300px;
+  margin: 0 auto;
+  margin-top: 40px;
+  display: block;
+  position: relative;
+  fill: url(#bg-gradient);
+  cursor: pointer;
+  opacity: 0.7;
+  animation: reset 0.3s ease forwards;
+}
+
+#microphone:hover {
+	opacity: 0.9;
+}
+
+#microphone.live {
+	fill: url(#live-gradient);
+	animation: bounce 1.5s ease infinite;
+	opacity: 1;
+}
+
+@keyframes bounce {
+	0% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(0.95);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+
+@keyframes reset {
+	0% {
+		transform: scale(0.95);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+
+
+#sendButton {
+	font-weight: 700;
+	font-size: 1.1em;
+	transition: 1s;
+
+	display: block;
+	margin: 0 auto;
+	margin-top: 30px;
+
+	background: none;	
+	color: #ED725A;
+
+	cursor: pointer;
+
+	border: none;
+	opacity: 1;
+}
+
+#sendButton:enabled {
+	font-size: 2em;
+	animation: bounce 4s ease infinite;
+}
+
+#sendButton:disabled {
+	opacity: 0.4;
+	background: none;
+}
+
+.text {
+	padding-top: 40px;
+}

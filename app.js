@@ -8,6 +8,7 @@ var mwymiRouter = require('./routes/mwymi');
 var twitterRouter = require('./routes/twitter');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var recordingRouter = require('./routes/recording');
 
 var app = express();
 
@@ -24,6 +25,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/mwymi', mwymiRouter);
 app.use('/twitter', twitterRouter);
+app.use('/record', recordingRouter);
 app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler

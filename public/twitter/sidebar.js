@@ -1,10 +1,10 @@
 document.write(`
 <div class="topnav" id="myTopnav">
-    <a href="/" class="title-icon"><i class="fas fa-tractor"></i></a>
-    <a href="/twitter/about">About</a>
-    <a href="/twitter/daily">Daily Trends</a>
-    <a href="/twitter/weekly">Weekly Trends</a>
-    <a href="/twitter/recent">Most Recent Snapshot</a>
+    <a href="/" class="title-icon"><i class="fas fa-book-reader"></i></a>
+    <a href="/about">About</a>
+    <a href="/daily">Daily Trends</a>
+    <a href="/weekly">Weekly Trends</a>
+    <a href="/recent">Most Recent Snapshot</a>
 
     <div class="theme-switch-wrapper">
         <label class="theme-switch" for="checkbox">
