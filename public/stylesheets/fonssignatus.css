@@ -222,6 +222,12 @@ p, h4 {
 	}
 }
 
+@media only screen and (max-width: 400px) {
+	.back {
+		float: left;
+	}
+}
+
 /*
 @media only screen and (max-width: 568px) {
 	.content {
